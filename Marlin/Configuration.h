@@ -1,4 +1,4 @@
-/**
+/*
  * Marlin 3D Printer Firmware
  * Copyright (C) 2019 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
  *
@@ -21,7 +21,7 @@
  */
 #pragma once
 
-/**
+/*
  * Configuration.h
  *
  * Basic settings such as:
@@ -42,7 +42,7 @@
 //============================= Getting Started =============================
 //===========================================================================
 
-/**
+/*
  * Here are some standard links for getting your machine calibrated:
  *
  * http://reprap.org/wiki/Calibration
@@ -78,7 +78,7 @@
 #define STRING_SPLASH_LINE1 SHORT_BUILD_VERSION // will be shown during bootup in line 1
 #define STRING_SPLASH_LINE2 WEBSITE_URL         // will be shown during bootup in line 2
 
-/**
+/*
  * *** VENDORS PLEASE READ ***
  *
  * Marlin allows you to add a custom boot image for Graphical LCDs.
@@ -97,7 +97,7 @@
 
 // @section machine
 
-/**
+/*
  * Select the serial port on the board to use for communication with the host.
  * This allows the connection of wireless adapters (for instance) to non-default port pins.
  * Note: The first serial port (-1 or 0) will always be used by the Arduino bootloader.
@@ -106,7 +106,7 @@
  */
 #define SERIAL_PORT 0
 
-/**
+/*
  * Select a secondary serial port on the board to use for communication with the host.
  * This allows the connection of wireless adapters (for instance) to non-default port pins.
  * Serial port -1 is the USB emulated serial port, if available.
@@ -115,7 +115,7 @@
  */
 #define SERIAL_PORT_2 -1
 
-/**
+/*
  * This setting determines the communication speed of the printer.
  *
  * 250000 works in most cases, but you might try a lower speed if
@@ -155,7 +155,7 @@
 // For Cyclops or any "multi-extruder" that shares a single nozzle.
 //#define SINGLENOZZLE
 
-/**
+/*
  * Průša MK2 Single Nozzle Multi-Material Multiplexer, and variants.
  *
  * This device allows one stepper driver on a control board to drive
@@ -174,7 +174,7 @@
   //#define E_MUX2_PIN 44  // Needed for 5 to 8 inputs
 #endif
 
-/**
+/*
  * Prusa Multi-Material Unit v2
  *
  * Requires NOZZLE_PARK_FEATURE to park print head in case MMU unit fails.
@@ -202,13 +202,13 @@
   #define SWITCHING_NOZZLE_SERVO_ANGLES { 0, 90 }   // Angles for E0, E1 (single servo) or lowered/raised (dual servo)
 #endif
 
-/**
+/*
  * Two separate X-carriages with extruders that connect to a moving part
  * via a solenoid docking mechanism. Requires SOL1_PIN and SOL2_PIN.
  */
 //#define PARKING_EXTRUDER
 
-/**
+/*
  * Two separate X-carriages with extruders that connect to a moving part
  * via a magnetic docking mechanism using movements and no solenoid
  *
@@ -242,7 +242,7 @@
 
 #endif
 
-/**
+/*
  * Switching Toolhead
  *
  * Support for swappable and dockable toolheads, such as
@@ -250,7 +250,7 @@
  */
 //#define SWITCHING_TOOLHEAD
 
-/**
+/*
  * Magnetic Switching Toolhead
  *
  * Support swappable and dockable toolheads with a magnetic
@@ -272,7 +272,7 @@
   #endif
 #endif
 
-/**
+/*
  * "Mixing Extruder"
  *   - Adds G-codes M163 and M164 to set and "commit" the current mix factors.
  *   - Extends the stepping routines to move multiple steppers in proportion to the mix.
@@ -300,7 +300,7 @@
 
 // @section machine
 
-/**
+/*
  * Select your power supply here. Use 0 if you haven't connected the PS_ON_PIN
  *
  * 0 = No Power Switch
@@ -333,7 +333,7 @@
 //============================= Thermal Settings ============================
 //===========================================================================
 
-/**
+/*
  * --NORMAL IS 4.7kohm PULLUP!-- 1kohm pullup can be used on hotend sensor, using correct resistor and table
  *
  * Temperature sensors available:
@@ -478,7 +478,7 @@
 //====================== PID > Bed Temperature Control ======================
 //===========================================================================
 
-/**
+/*
  * PID Bed Heating
  *
  * If this option is enabled set PID constants below.
@@ -495,7 +495,7 @@
 
 //#define BED_LIMIT_SWITCHING
 
-/**
+/*
  * Max Bed Power
  * Applies to all forms of bed control (PID, bang-bang, and bang-bang with hysteresis).
  * When set to any value below 255, enables a form of PWM to the bed that acts like a divider
@@ -524,7 +524,7 @@
 
 // @section extruder
 
-/**
+/*
  * Prevent extrusion if the temperature is below EXTRUDE_MINTEMP.
  * Add M302 to set the minimum extrusion temperature and/or turn
  * cold extrusion prevention on and off.
@@ -534,7 +534,7 @@
 #define PREVENT_COLD_EXTRUSION
 #define EXTRUDE_MINTEMP 170
 
-/**
+/*
  * Prevent a single extrusion longer than EXTRUDE_MAXLENGTH.
  * Note: For Bowden Extruders make this large enough to allow load/unload.
  */
@@ -545,7 +545,7 @@
 //======================== Thermal Runaway Protection =======================
 //===========================================================================
 
-/**
+/*
  * Thermal Protection provides additional protection to your printer from damage
  * and fire. Marlin always includes safe min and max temperature ranges which
  * protect against a broken or disconnected thermistor wire.
@@ -558,8 +558,8 @@
  * details can be tuned in Configuration_adv.h
  */
 
-define THERMAL_PROTECTION_HOTENDS // Enable thermal protection for all extruders
-define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated bed
+#define THERMAL_PROTECTION_HOTENDS // Enable thermal protection for all extruders
+#define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated bed
 #define THERMAL_PROTECTION_CHAMBER // Enable thermal protection for the heated chamber
 
 //===========================================================================
@@ -622,13 +622,13 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
 #define X_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Y_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+#define Z_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
 #define X_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Y_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Z_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Z_MIN_PROBE_ENDSTOP_INVERTING false // Set to true to invert the logic of the probe.
 
-/**
+/*
  * Stepper Drivers
  *
  * These settings allow Marlin to tune stepper driver timing and enable advanced options for
@@ -661,7 +661,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
 // This will remove the need to poll the interrupt pins, saving many CPU cycles.
 //#define ENDSTOP_INTERRUPTS_FEATURE
 
-/**
+/*
  * Endstop Noise Threshold
  *
  * Enable if your probe or endstops falsely trigger due to noise.
@@ -680,7 +680,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
 //=============================================================================
 // @section motion
 
-/**
+/*
  * Default Settings
  *
  * These settings can be reset by M502
@@ -688,28 +688,28 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
  * Note that if EEPROM is enabled, saved values will override these.
  */
 
-/**
+/*
  * With this option each E stepper can have its own factors for the
  * following movement settings. If fewer factors are given than the
  * total number of extruders, the last value applies to the rest.
  */
 //#define DISTINCT_E_FACTORS
 
-/**
+/*
  * Default Axis Steps Per Unit (steps/mm)
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4[, E5]]]]]
  */
 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 100 }
 
-/**
+/*
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4[, E5]]]]]
  */
 #define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25 }
 
-/**
+/*
  * Default Max Acceleration (change/s) change = mm/s
  * (Maximum start speed for accelerated moves)
  * Override with M201
@@ -717,7 +717,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
  */
 #define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 10000 }
 
-/**
+/*
  * Default Acceleration (change/s) change = mm/s
  * Override with M204
  *
@@ -737,7 +737,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
   #define JUNCTION_DEVIATION_MM 0.02  // (mm) Distance from real junction edge
 #endif
 
-/**
+/*
  * Default Jerk (mm/s)
  * Override with M205 X Y Z E
  *
@@ -753,7 +753,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
 
 #define DEFAULT_EJERK    5.0  // May be used by Linear Advance
 
-/**
+/*
  * S-Curve Acceleration
  *
  * This option eliminates vibration during printing by fitting a Bézier
@@ -772,14 +772,14 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
 // See http://marlinfw.org/docs/configuration/probes.html
 //
 
-/**
+/*
  * Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
  *
  * Enable this option for a probe connected to the Z Min endstop pin.
  */
 #define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
-/**
+/*
  * Z_MIN_PROBE_PIN
  *
  * Define this pin if the probe is not connected to Z_MIN_PIN.
@@ -797,14 +797,14 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
  */
 //#define Z_MIN_PROBE_PIN 32 // Pin 32 is the RAMPS default
 
-/**
+/*
  * Probe Type
  *
  * Allen Key Probes, Servo Probes, Z-Sled Probes, FIX_MOUNTED_PROBE, etc.
  * Activate one of these to use Auto Bed Leveling below.
  */
 
-/**
+/*
  * The "Manual Probe" provides a means to do "Auto" Bed Leveling without a probe.
  * Use G29 repeatedly, adjusting the Z height at each point with movement commands
  * or (with LCD_BED_LEVELING) the LCD controller.
@@ -812,24 +812,24 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
 //#define PROBE_MANUALLY
 //#define MANUAL_PROBE_START_Z 0.2
 
-/**
+/*
  * A Fix-Mounted Probe either doesn't deploy or needs manual deployment.
  *   (e.g., an inductive probe or a nozzle-based probe-switch.)
  */
 //#define FIX_MOUNTED_PROBE
 
-/**
+/*
  * Z Servo Probe, such as an endstop switch on a rotating arm.
  */
 //#define Z_PROBE_SERVO_NR 0       // Defaults to SERVO 0 connector.
 //#define Z_SERVO_ANGLES { 70, 0 } // Z Servo Deploy and Stow angles
 
-/**
+/*
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
  */
 //#define BLTOUCH
 
-/**
+/*
  * Touch-MI Probe by hotends.fr
  *
  * This probe is deployed and activated by moving the X-axis to a magnet at the edge of the bed.
@@ -863,7 +863,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
 // For Z_PROBE_ALLEN_KEY see the Delta example configurations.
 //
 
-/**
+/*
  * Z Probe to nozzle (X,Y) offset, relative to (0, 0).
  * X and Y offsets must be integers.
  *
@@ -898,7 +898,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
 // Feedrate (mm/m) for the "accurate" probe of each point
 #define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)
 
-/**
+/*
  * Multiple Probing
  *
  * You may get improved results by probing 2 or more times.
@@ -910,7 +910,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
 //#define MULTIPLE_PROBING 2
 //#define EXTRA_PROBING    1
 
-/**
+/*
  * Z probes require clearance when deploying, stowing, and moving between
  * probe points to avoid hitting the bed and other hardware.
  * Servo-mounted probes require extra space for the arm to rotate.
@@ -944,7 +944,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
   //#define PAUSE_PROBE_DEPLOY_WHEN_TRIGGERED // For Manual Deploy Allenkey Probe
 #endif
 
-/**
+/*
  * Enable one or more of the following if probing seems unreliable.
  * Heaters and/or fans can be disabled during probing to minimize electrical
  * noise. A delay can also be added to allow noise and vibration to settle.
@@ -1026,7 +1026,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
 #define Y_MAX_POS Y_BED_SIZE
 #define Z_MAX_POS 400
 
-/**
+/*
  * Software Endstops
  *
  * - Prevent moves outside the set machine bounds.
@@ -1055,7 +1055,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
   //#define SOFT_ENDSTOPS_MENU_ITEM  // Enable/Disable software endstops from the LCD
 #endif
 
-/**
+/*
  * Filament Runout Sensors
  * Mechanical or opto endstops are used to check for the presence of filament.
  *
@@ -1092,7 +1092,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
 //===========================================================================
 // @section calibrate
 
-/**
+/*
  * Choose one of the options below to enable G29 Bed Leveling. The parameters
  * and behavior of G29 will change depending on your selection.
  *
@@ -1131,13 +1131,13 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
 //#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
 
-/**
+/*
  * Normally G28 leaves leveling disabled on completion. Enable
  * this option to have G28 restore the prior leveling state.
  */
 //#define RESTORE_LEVELING_AFTER_G28
 
-/**
+/*
  * Enable detailed logging of G28, G29, M48, etc.
  * Turn on with the command 'M111 S32'.
  * NOTE: Requires a lot of PROGMEM!
@@ -1156,7 +1156,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
   #define SEGMENT_LEVELED_MOVES
   #define LEVELED_SEGMENT_LENGTH 5.0 // (mm) Length of all segments (except the last one)
 
-  /**
+  /*
    * Enable the G26 Mesh Validation Pattern tool.
    */
   //#define G26_MESH_VALIDATION
@@ -1235,7 +1235,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
 
 #endif // BED_LEVELING
 
-/**
+/*
  * Points to probe for all 3-point Leveling procedures.
  * Override if the automatically selected points are inadequate.
  */
@@ -1248,7 +1248,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
   //#define PROBE_PT_3_Y 20
 #endif
 
-/**
+/*
  * Add a bed leveling sub-menu for ABL or MBL.
  * Include a guided procedure if manual probing is enabled.
  */
@@ -1270,7 +1270,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
   //#define LEVEL_CENTER_TOO        // Move to the center after the last corner
 #endif
 
-/**
+/*
  * Commands to execute at the end of G29 probing.
  * Useful to retract or move the Z probe out of the way.
  */
@@ -1313,7 +1313,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
 
 // @section calibrate
 
-/**
+/*
  * Bed Skew Compensation
  *
  * This feature corrects for misalignment in the XYZ axes.
@@ -1374,7 +1374,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
 
 // @section extras
 
-/**
+/*
  * EEPROM
  *
  * Persistent storage to preserve configurable settings across reboots.
@@ -1428,7 +1428,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
 #define PREHEAT_2_TEMP_BED    110
 #define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
 
-/**
+/*
  * Nozzle Park
  *
  * Park the nozzle at the given XYZ position on idle or G27.
@@ -1448,7 +1448,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
   #define NOZZLE_PARK_Z_FEEDRATE 5      // (mm/s) Z axis feedrate (not used for delta printers)
 #endif
 
-/**
+/*
  * Clean Nozzle Feature -- EXPERIMENTAL
  *
  * Adds the G12 command to perform a nozzle cleaning process.
@@ -1510,7 +1510,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
   #define NOZZLE_CLEAN_GOBACK
 #endif
 
-/**
+/*
  * Print Job Timer
  *
  * Automatically start and stop the print job timer on M104/M109/M190.
@@ -1527,7 +1527,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
  */
 #define PRINTJOB_TIMER_AUTOSTART
 
-/**
+/*
  * Print Counter
  *
  * Track statistical data such as:
@@ -1547,7 +1547,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
 
 // @section lcd
 
-/**
+/*
  * LCD LANGUAGE
  *
  * Select the language to display on the LCD. These languages are available:
@@ -1559,7 +1559,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
  */
 #define LCD_LANGUAGE en
 
-/**
+/*
  * LCD Character Set
  *
  * Note: This option is NOT applicable to Graphical Displays.
@@ -1583,14 +1583,14 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
  */
 #define DISPLAY_CHARSET_HD44780 JAPANESE
 
-/**
+/*
  * Info Screen Style (0:Classic, 1:Prusa)
  *
  * :[0:'Classic', 1:'Prusa']
  */
 #define LCD_INFO_SCREEN_STYLE 0
 
-/**
+/*
  * SD CARD
  *
  * SD Card support is disabled by default. If your controller has an SD slot,
@@ -1599,7 +1599,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
  */
 #define SDSUPPORT
 
-/**
+/*
  * SD CARD: SPI SPEED
  *
  * Enable one of the following items for a slower SPI transfer speed.
@@ -1609,14 +1609,14 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
 //#define SPI_SPEED SPI_QUARTER_SPEED
 //#define SPI_SPEED SPI_EIGHTH_SPEED
 
-/**
+/*
  * SD CARD: ENABLE CRC
  *
  * Use CRC checks and retries on the SD communication.
  */
 //#define SD_CHECK_AND_RETRY
 
-/**
+/*
  * LCD Menu Items
  *
  * Disable all menus and only display the Status Screen, or
@@ -1639,7 +1639,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
 //
 //#define ENCODER_STEPS_PER_MENU_ITEM 1
 
-/**
+/*
  * Encoder Direction Options
  *
  * Test your encoder's behavior first with both options disabled.
@@ -2065,7 +2065,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
 // https://github.com/mikeshub/SailfishRGB_LED
 //#define PCA9533
 
-/**
+/*
  * RGB LED / LED Strip Control
  *
  * Enable support for an RGB LED connected to 5V digital pins, or
@@ -2112,7 +2112,7 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
   //#define NEOPIXEL_BKGD_COLOR { 255, 255, 255, 0 } // R, G, B, W
 #endif
 
-/**
+/*
  * Printer Event LEDs
  *
  * During printing, the LEDs will reflect the printer status:
@@ -2127,12 +2127,12 @@ define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated be
   #define PRINTER_EVENT_LEDS
 #endif
 
-/**
+/*
  * R/C SERVO support
  * Sponsored by TrinityLabs, Reworked by codexmas
  */
 
-/**
+/*
  * Number of servos
  *
  * For some servo-related options NUM_SERVOS will be set automatically.
