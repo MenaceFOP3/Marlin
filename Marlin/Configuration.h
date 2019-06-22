@@ -827,7 +827,7 @@
 /*
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
  */
-//#define BLTOUCH
+#define BLTOUCH
 
 /*
  * Touch-MI Probe by hotends.fr
@@ -2133,7 +2133,7 @@
  */
 
 /*
- * Number of servos
+ * Number of servos 
  *
  * For some servo-related options NUM_SERVOS will be set automatically.
  * Set this manually if there are extra servos needing manual control.
